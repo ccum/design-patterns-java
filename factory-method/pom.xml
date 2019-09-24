@@ -32,11 +32,11 @@
 	</dependency>
   </dependencies>
 
-  <build>
+<!--   <build>
     <resources>
     	<resource>
     		<directory>resources</directory>
     	</resource>
     </resources>
-  </build>
+  </build> -->
 </project>
