@@ -25,18 +25,18 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-	<dependency>
+    <dependency>
 	    <groupId>oracle</groupId>
 	    <artifactId>oracle-jdbc</artifactId>
-	    <version>12.1.0.1.0</version>
+	    <version>12.1.0.2</version>
 	</dependency>
   </dependencies>
 
-<!--   <build>
+  <build>
     <resources>
     	<resource>
     		<directory>resources</directory>
     	</resource>
     </resources>
-  </build> -->
+  </build>
 </project>
