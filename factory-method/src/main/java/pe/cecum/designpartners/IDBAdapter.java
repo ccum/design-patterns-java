@@ -1,5 +1,7 @@
 package pe.cecum.designpartners;
+import java.sql.Connection;
 
-public class IDBAdapter {
-
+public interface IDBAdapter {
+	
+	public Connection getConection();
 }
