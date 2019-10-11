@@ -1,8 +1,12 @@
 package pe.cecum.factorymethod.impl;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.Properties;
 
+import oracle.jdbc.driver.OracleDriver;
 import pe.cecum.factorymethod.IDBAdapter;
+import pe.cecum.factorymethod.util.PropertiesUtil;
 
 public class OracleDBAdapter  implements IDBAdapter{
 	
@@ -15,7 +19,7 @@ public class OracleDBAdapter  implements IDBAdapter{
 	
 	static {
 		try {
-			//new OracleDriver();
+			new OracleDriver();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -25,8 +29,32 @@ public class OracleDBAdapter  implements IDBAdapter{
 
 	@Override
 	public Connection getConection() {
-		// TODO Auto-generated method stub
+		try
+		{
+			String connectionString = createConnectionString();
+			Connection connection = DriverManager.getConnection(connectionString);
+			System.out.println("Connection >>>>" + connection.getClass().getName());
+			return connection;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 		return null;
+		
+	}
+
+
+	private String createConnectionString() {
+		Properties prop = PropertiesUtil.loadProperty(DB_PROPERTIES);
+		String host = prop.getProperty(DB_HOST_PROP);
+		String port =  prop.getProperty(DB_PORT_PROP);
+		String service = prop.getProperty(DB_SERVICE_PROP);
+		String user = prop.getProperty(DB_USER_PROP);
+		String password = prop.getProperty(DB_PASSWORD_PROP);
+		String connectionString = "jdbc:oracle:thin:"
+				+user+"/"+password+"@//"+host+":"+port+"/"+service;
+		System.out.println("ConnectionString ==> " + connectionString);
+		return connectionString;
 	}
 
 }
