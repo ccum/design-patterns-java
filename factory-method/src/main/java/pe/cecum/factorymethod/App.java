@@ -1,4 +1,4 @@
-package pe.cecum.designpartners;
+package pe.cecum.factorymethod;
 
 /**
  * Hello world!

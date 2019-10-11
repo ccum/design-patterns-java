@@ -1,4 +1,4 @@
-package pe.cecum.designpartners;
+package pe.cecum.factorymethod;
 import java.sql.Connection;
 
 public interface IDBAdapter {

@@ -1,8 +1,8 @@
-package pe.cecum.designpartners.impl;
+package pe.cecum.factorymethod.impl;
 
 import java.sql.Connection;
 
-import pe.cecum.designpartners.IDBAdapter;
+import pe.cecum.factorymethod.IDBAdapter;
 
 public class MySQLDBAdapter implements IDBAdapter {
 
