@@ -1,5 +1,6 @@
 package pe.cecum.factorymethod;
 
-public class DBType {
-
+public enum DBType {
+	
+	MySQL, Oracle,
 }
